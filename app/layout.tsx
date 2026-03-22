@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
 import { APP_DATA } from "@/data/app.data"
 import { createMetadata } from "@/lib/seo"
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -67,6 +68,17 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
+
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <GoogleAnalytics
+              gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!}
+            />
+            <GoogleTagManager
+              gtmId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID!}
+            />
+          </>
+        )}
       </body>
     </html>
   )
