@@ -2,7 +2,7 @@
 
 > Open-source, publishable **skills** and **agents** for Claude-style workflows, plus a Next.js showcase app to browse them.
 
-[![CI](https://github.com/sadamkhan7679/agent-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/sadamkhan7679/agent-skills/actions/workflows/ci.yml)
+[![CI](https://github.com/sadamkhan7679/agent-ops/actions/workflows/ci.yml/badge.svg)](https://github.com/sadamkhan7679/agent-ops/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 

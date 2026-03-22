@@ -1,17 +1,17 @@
 {
-  "name": "agent-skills",
+  "name": "agent-ops",
   "version": "0.0.1",
   "type": "module",
   "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sadamkhan7679/agent-skills.git"
+    "url": "git+https://github.com/sadamkhan7679/agent-ops.git"
   },
   "bugs": {
-    "url": "https://github.com/sadamkhan7679/agent-skills/issues"
+    "url": "https://github.com/sadamkhan7679/agent-ops/issues"
   },
-  "homepage": "https://github.com/sadamkhan7679/agent-skills",
+  "homepage": "https://github.com/sadamkhan7679/agent-ops",
   "scripts": {
     "dev": "next dev --turbopack",
     "generate:readme": "tsx scripts/generate-readme.ts",

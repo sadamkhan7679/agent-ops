@@ -4,9 +4,12 @@ import { ArrowLeft } from "lucide-react"
 
 import { getAllSkills, getSkillBySlug } from "@/lib/skills"
 import { renderSkillContent } from "@/lib/markdown"
+import { CopyButton } from "@/components/shared/copy-button"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { APP_DATA } from "@/data/app.data"
 
 export function generateStaticParams() {
   return getAllSkills().map((skill) => ({ slug: skill.slug }))
@@ -25,6 +28,7 @@ export default async function SkillDetailPage({
   }
 
   const mdxContent = await renderSkillContent(slug)
+  const installCommand = `npx skills add ${APP_DATA.repoUrl} --skill ${skill.slug}`
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
@@ -62,6 +66,22 @@ export default async function SkillDetailPage({
           <MetaItem label="Category" value={skill.category} />
           <MetaItem label="Tags" value={skill.tags.length.toString()} />
         </div>
+
+        <Separator />
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Install Skill</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#0d1117]">
+              <CopyButton text={installCommand} />
+              <pre className="overflow-x-auto px-4 py-4 pr-14 font-mono text-[13px] leading-relaxed text-white/90">
+                <code>{installCommand}</code>
+              </pre>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* MDX content */}
         {mdxContent && (
