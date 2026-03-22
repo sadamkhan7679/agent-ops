@@ -31,10 +31,10 @@ Open `http://localhost:3000` and browse:
 
 ## Stats
 
-- **6 skills** available locally
+- **7 skills** available locally
 - **20 agents** available locally
 - **6 teams** represented
-- **17 unique skill tags**
+- **23 unique skill tags**
 - **20 unique agent roles**
 
 ## Agent Teams
@@ -50,6 +50,7 @@ Open `http://localhost:3000` and browse:
 
 | Skill | Slug | Category | Description |
 | --- | --- | --- | --- |
+| Next.js SEO Optimization | `nextjs-seo-optimization` | Next.js | Comprehensive SEO optimization for Next.js App Router projects. Use this whenever the user asks about Next.js SEO, metadata, generateMetadata, canonical URLs, sitemap.xml, robots.txt, JSON-LD, Open Graph, Twitter cards, indexing, crawlability, structured data, AI visibility, AEO, GEO, or why a Next.js page is not ranking or not appearing in AI-generated answers. |
 | React Best Practices | `react-best-practices` | React | Production-grade React best practices covering performance, hooks, state management, error handling, Suspense, accessibility, and Server Components |
 | React Component Patterns | `react-component-patterns` | React | Advanced React component patterns with TypeScript including compound components, render props, HOCs, polymorphic components, and more |
 | React Hook Form + Zod + shadcn/ui | `react-hook-form-zod-shadcn` | Forms | Complete guide to building type-safe forms with react-hook-form v7, Zod v4, and shadcn/ui Form components |
