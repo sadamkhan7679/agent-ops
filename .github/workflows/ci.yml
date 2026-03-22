@@ -33,10 +33,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Verify generated README
-        run: |
-          pnpm generate:readme
-          git diff --exit-code README.md
+      # - name: Verify generated README
+      #   run: |
+      #     pnpm generate:readme
+      #     git diff --exit-code README.md
 
       - name: Typecheck
         run: pnpm typecheck

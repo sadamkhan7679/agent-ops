@@ -50,13 +50,13 @@ Open `http://localhost:3000` and browse:
 
 | Skill | Slug | Category | Description |
 | --- | --- | --- | --- |
-| Next.js SEO Optimization | `nextjs-seo-optimization` | Next.js | Comprehensive SEO optimization for Next.js App Router projects. Use this whenever the user asks about Next.js SEO, metadata, generateMetadata, canonical URLs, sitemap.xml, robots.txt, JSON-LD, Open Graph, Twitter cards, indexing, crawlability, structured data, AI visibility, AEO, GEO, or why a Next.js page is not ranking or not appearing in AI-generated answers. |
-| React Best Practices | `react-best-practices` | React | Production-grade React best practices covering performance, hooks, state management, error handling, Suspense, accessibility, and Server Components |
-| React Component Patterns | `react-component-patterns` | React | Advanced React component patterns with TypeScript including compound components, render props, HOCs, polymorphic components, and more |
-| React Hook Form + Zod + shadcn/ui | `react-hook-form-zod-shadcn` | Forms | Complete guide to building type-safe forms with react-hook-form v7, Zod v4, and shadcn/ui Form components |
-| React Project Structure | `react-project-structure` | React | Opinionated React + Next.js + TypeScript project structure and component-splitting guidance. Use this whenever the user asks how to organize a frontend codebase, where files should live, how to split large pages or components, how to structure components, hooks, services, store, constants, lib, types, data, schema, or actions, or when a Next.js app feels messy and needs a consistent architecture. |
-| shadcn/ui Dialog Builder | `shadcn-dialog-builder` | UI Components | Comprehensive patterns for building confirmation, form, wizard, and responsive dialogs with shadcn/ui and TypeScript |
-| shadcn/ui Shared Form Fields | `shadcn-shared-form-fields` | Forms | Reusable, type-safe form field components wrapping shadcn/ui primitives with react-hook-form useFormContext |
+| nextjs-seo-optimization | `nextjs-seo-optimization` | Next.js | Comprehensive SEO optimization for Next.js App Router projects. Use this whenever the user asks about Next.js SEO, metadata, generateMetadata, canonical URLs, sitemap.xml, robots.txt, JSON-LD, Open Graph, Twitter cards, indexing, crawlability, structured data, AI visibility, AEO, GEO, or why a Next.js page is not ranking or not appearing in AI-generated answers. |
+| react-best-practices | `react-best-practices` | React | Production-grade React best practices covering performance, hooks, state management, error handling, Suspense, accessibility, and Server Components |
+| react-component-patterns | `react-component-patterns` | React | Advanced React component patterns with TypeScript including compound components, render props, HOCs, polymorphic components, and more |
+| react-hook-form-zod-shadcn | `react-hook-form-zod-shadcn` | Forms | Complete guide to building type-safe forms with react-hook-form v7, Zod v4, and shadcn/ui Form components |
+| react-project-structure | `react-project-structure` | React | Opinionated React + Next.js + TypeScript project structure and component-splitting guidance. Use this whenever the user asks how to organize a frontend codebase, where files should live, how to split large pages or components, how to structure components, hooks, services, store, constants, lib, types, data, schema, or actions, or when a Next.js app feels messy and needs a consistent architecture. |
+| shadcn-dialog-builder | `shadcn-dialog-builder` | UI Components | Comprehensive patterns for building confirmation, form, wizard, and responsive dialogs with shadcn/ui and TypeScript |
+| shadcn-shared-form-fields | `shadcn-shared-form-fields` | Forms | Reusable, type-safe form field components wrapping shadcn/ui primitives with react-hook-form useFormContext |
 
 ## Agents By Team
 
