@@ -46,6 +46,7 @@ export default function Page() {
             name: APP_DATA.appName,
             url: absoluteUrl("/"),
             description: APP_DATA.appDescription,
+            inLanguage: "en-US",
           },
           {
             "@context": "https://schema.org",
@@ -53,6 +54,31 @@ export default function Page() {
             name: APP_DATA.appName,
             url: absoluteUrl("/"),
             sameAs: [APP_DATA.repoUrl],
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Featured AI Skills and Agents",
+            itemListElement: [
+              ...featuredSkills.map((skill, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                url: absoluteUrl(`/skills/${skill.slug}`),
+                name: skill.name,
+              })),
+              ...featuredAgentGroups.flatMap((group, groupIndex) =>
+                group.agents.map((agent, agentIndex) => ({
+                  "@type": "ListItem",
+                  position:
+                    featuredSkills.length +
+                    groupIndex * group.agents.length +
+                    agentIndex +
+                    1,
+                  url: absoluteUrl(`/agents/${agent.slug}`),
+                  name: agent.name,
+                }))
+              ),
+            ],
           },
         ]}
       />

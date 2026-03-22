@@ -13,11 +13,13 @@ export function createMetadata({
   description,
   path = "/",
   keywords = [],
+  type = "website",
 }: {
   title?: string
   description?: string
   path?: string
   keywords?: string[]
+  type?: "website" | "article"
 } = {}): Metadata {
   const siteUrl = getSiteUrl()
   const resolvedDescription = description ?? APP_DATA.appDescription
@@ -27,15 +29,25 @@ export function createMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
+    applicationName: APP_DATA.appName,
     title: resolvedTitle,
     description: resolvedDescription,
     keywords: [...APP_DATA.defaultKeywords, ...keywords],
+    category: "technology",
+    creator: APP_DATA.companyName,
+    publisher: APP_DATA.companyName,
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    referrer: "origin-when-cross-origin",
     alternates: {
       canonical,
     },
     openGraph: {
-      type: "website",
-      locale: "en_US",
+      type,
+      locale: APP_DATA.locale,
       url: canonical,
       siteName: APP_DATA.appName,
       title: resolvedTitle,
@@ -55,6 +67,12 @@ export function createMetadata({
       description: resolvedDescription,
       images: [DEFAULT_OG_IMAGE],
     },
+    authors: [
+      {
+        name: APP_DATA.companyName,
+        url: APP_DATA.repoUrl,
+      },
+    ],
   }
 }
 

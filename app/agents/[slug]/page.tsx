@@ -45,6 +45,7 @@ export async function generateMetadata({
     description: agent.description,
     path: `/agents/${agent.slug}`,
     keywords: [...agent.tags, agent.role, agent.teamLabel, "AI agent"],
+    type: "article",
   })
 }
 
@@ -65,18 +66,44 @@ export default async function AgentDetailPage({
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "TechArticle",
-          headline: agent.name,
-          description: agent.description,
-          url: absoluteUrl(`/agents/${agent.slug}`),
-          keywords: agent.tags,
-          author: {
-            "@type": "Organization",
-            name: agent.author,
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline: agent.name,
+            description: agent.description,
+            url: absoluteUrl(`/agents/${agent.slug}`),
+            keywords: agent.tags,
+            author: {
+              "@type": "Organization",
+              name: agent.author,
+            },
           },
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: absoluteUrl("/"),
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Agents",
+                item: absoluteUrl("/agents"),
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: agent.name,
+                item: absoluteUrl(`/agents/${agent.slug}`),
+              },
+            ],
+          },
+        ]}
       />
       <Button
         render={<Link href="/agents" />}

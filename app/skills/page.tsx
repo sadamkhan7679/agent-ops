@@ -21,14 +21,27 @@ export default function SkillsPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Skills Catalog",
-          url: absoluteUrl("/skills"),
-          description:
-            "Searchable catalog of reusable AI skills for Claude-style workflows.",
-        }}
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Skills Catalog",
+            url: absoluteUrl("/skills"),
+            description:
+              "Searchable catalog of reusable AI skills for Claude-style workflows.",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Skills Catalog",
+            itemListElement: skills.map((skill, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              url: absoluteUrl(`/skills/${skill.slug}`),
+              name: skill.name,
+            })),
+          },
+        ]}
       />
       <div className="mb-8 flex flex-col gap-2">
         <div className="flex items-center gap-2">

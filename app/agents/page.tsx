@@ -21,14 +21,27 @@ export default function AgentsPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "CollectionPage",
-          name: "Agents Catalog",
-          url: absoluteUrl("/agents"),
-          description:
-            "Searchable catalog of specialized AI agents grouped by team and role.",
-        }}
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Agents Catalog",
+            url: absoluteUrl("/agents"),
+            description:
+              "Searchable catalog of specialized AI agents grouped by team and role.",
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            name: "Agents Catalog",
+            itemListElement: agents.map((agent, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              url: absoluteUrl(`/agents/${agent.slug}`),
+              name: agent.name,
+            })),
+          },
+        ]}
       />
       <div className="mb-8 flex flex-col gap-2">
         <div className="flex items-center gap-2">

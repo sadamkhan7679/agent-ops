@@ -31,9 +31,17 @@ export const metadata: Metadata = {
     default: APP_DATA.appName,
     template: `%s | ${APP_DATA.appName}`,
   },
+  manifest: "/manifest.webmanifest",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 }
 

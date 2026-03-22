@@ -39,6 +39,7 @@ export async function generateMetadata({
     description: skill.description,
     path: `/skills/${skill.slug}`,
     keywords: [...skill.tags, skill.category, "AI skill"],
+    type: "article",
   })
 }
 
@@ -60,18 +61,44 @@ export default async function SkillDetailPage({
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
       <JsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "TechArticle",
-          headline: skill.name,
-          description: skill.description,
-          url: absoluteUrl(`/skills/${skill.slug}`),
-          keywords: skill.tags,
-          author: {
-            "@type": "Organization",
-            name: skill.author,
+        data={[
+          {
+            "@context": "https://schema.org",
+            "@type": "TechArticle",
+            headline: skill.name,
+            description: skill.description,
+            url: absoluteUrl(`/skills/${skill.slug}`),
+            keywords: skill.tags,
+            author: {
+              "@type": "Organization",
+              name: skill.author,
+            },
           },
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: absoluteUrl("/"),
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Skills",
+                item: absoluteUrl("/skills"),
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: skill.name,
+                item: absoluteUrl(`/skills/${skill.slug}`),
+              },
+            ],
+          },
+        ]}
       />
       <Button
         render={<Link href="/skills" />}
