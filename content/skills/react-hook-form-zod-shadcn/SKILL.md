@@ -1,5 +1,5 @@
 ---
-name: React Hook Form + Zod + shadcn/ui
+name: react-hook-form-zod-shadcn
 description: Complete guide to building type-safe forms with react-hook-form v7, Zod v4, and shadcn/ui Form components
 version: 1.0.0
 type: skill
@@ -871,14 +871,14 @@ export function UploadForm() {
 
 ## Quick Reference
 
-| Feature | Approach |
-|---------|----------|
-| Schema definition | `z.object({...})` with Zod v4 |
-| Type inference | `z.infer<typeof schema>` |
-| Resolver | `zodResolver(schema)` from `@hookform/resolvers/zod` |
-| Field rendering | `<FormField>` with render prop |
-| Dynamic arrays | `useFieldArray` from react-hook-form |
-| Multi-step | Schema composition + `form.trigger(fields)` |
-| Async validation | `z.string().refine(async () => ...)` |
-| File uploads | `z.instanceof(FileList)` + `form.register()` |
-| Cross-field validation | `schema.refine()` or `schema.superRefine()` |
+| Feature                | Approach                                             |
+| ---------------------- | ---------------------------------------------------- |
+| Schema definition      | `z.object({...})` with Zod v4                        |
+| Type inference         | `z.infer<typeof schema>`                             |
+| Resolver               | `zodResolver(schema)` from `@hookform/resolvers/zod` |
+| Field rendering        | `<FormField>` with render prop                       |
+| Dynamic arrays         | `useFieldArray` from react-hook-form                 |
+| Multi-step             | Schema composition + `form.trigger(fields)`          |
+| Async validation       | `z.string().refine(async () => ...)`                 |
+| File uploads           | `z.instanceof(FileList)` + `form.register()`         |
+| Cross-field validation | `schema.refine()` or `schema.superRefine()`          |

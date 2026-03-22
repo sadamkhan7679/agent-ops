@@ -1,5 +1,5 @@
 ---
-name: React Component Patterns
+name: react-component-patterns
 description: Advanced React component patterns with TypeScript including compound components, render props, HOCs, polymorphic components, and more
 version: 1.0.0
 type: skill
@@ -668,14 +668,14 @@ function DataTable<T>({ data, isLoading, slots }: DataTableProps<T>) {
 
 ## Summary
 
-| Pattern | Best For | Complexity |
-|---------|----------|------------|
-| Compound Components | UI component libraries, multi-part components | Medium |
-| Render Props | Headless components, flexible rendering | Low |
-| HOCs | Cross-cutting concerns (auth, flags, logging) | Medium |
-| Polymorphic Components | Design system primitives | High |
-| Controlled/Uncontrolled | Form elements, toggles, inputs | Medium |
-| Ref Forwarding | Wrapping native elements, imperative APIs | Low |
-| Slots | Highly customizable layouts | Low |
+| Pattern                 | Best For                                      | Complexity |
+| ----------------------- | --------------------------------------------- | ---------- |
+| Compound Components     | UI component libraries, multi-part components | Medium     |
+| Render Props            | Headless components, flexible rendering       | Low        |
+| HOCs                    | Cross-cutting concerns (auth, flags, logging) | Medium     |
+| Polymorphic Components  | Design system primitives                      | High       |
+| Controlled/Uncontrolled | Form elements, toggles, inputs                | Medium     |
+| Ref Forwarding          | Wrapping native elements, imperative APIs     | Low        |
+| Slots                   | Highly customizable layouts                   | Low        |
 
 Choose the simplest pattern that solves your problem. Prefer composition and hooks over HOCs. Use compound components for complex multi-part UI. Use polymorphic components in design system foundations.

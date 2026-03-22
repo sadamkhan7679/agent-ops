@@ -1,5 +1,5 @@
 ---
-name: React Best Practices
+name: react-best-practices
 description: Production-grade React best practices covering performance, hooks, state management, error handling, Suspense, accessibility, and Server Components
 version: 1.0.0
 type: skill
@@ -785,13 +785,13 @@ export default async function UserPage({ params }: { params: Promise<{ id: strin
 
 ## Quick Reference
 
-| Practice | Do | Don't |
-|----------|-----|-------|
-| Memoization | Memo expensive computations | Memo everything |
-| State | Lift to nearest common ancestor | Prop drill through 5+ levels |
-| Context | Split state and dispatch | Put everything in one context |
-| Error boundaries | Wrap route segments | Wrap every component |
-| Keys | Use stable unique IDs | Use array index |
-| Server Components | Default for non-interactive UI | Add "use client" everywhere |
-| Client Components | Only for interactivity | Fetch data in client components |
-| Accessibility | Semantic HTML + ARIA when needed | div and span for everything |
+| Practice          | Do                               | Don't                           |
+| ----------------- | -------------------------------- | ------------------------------- |
+| Memoization       | Memo expensive computations      | Memo everything                 |
+| State             | Lift to nearest common ancestor  | Prop drill through 5+ levels    |
+| Context           | Split state and dispatch         | Put everything in one context   |
+| Error boundaries  | Wrap route segments              | Wrap every component            |
+| Keys              | Use stable unique IDs            | Use array index                 |
+| Server Components | Default for non-interactive UI   | Add "use client" everywhere     |
+| Client Components | Only for interactivity           | Fetch data in client components |
+| Accessibility     | Semantic HTML + ARIA when needed | div and span for everything     |

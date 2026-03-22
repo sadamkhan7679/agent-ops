@@ -1,5 +1,5 @@
 ---
-name: Next.js SEO Optimization
+name: nextjs-seo-optimization
 description: Comprehensive SEO optimization for Next.js App Router projects. Use this whenever the user asks about Next.js SEO, metadata, generateMetadata, canonical URLs, sitemap.xml, robots.txt, JSON-LD, Open Graph, Twitter cards, indexing, crawlability, structured data, AI visibility, AEO, GEO, or why a Next.js page is not ranking or not appearing in AI-generated answers.
 version: 1.0.0
 type: skill

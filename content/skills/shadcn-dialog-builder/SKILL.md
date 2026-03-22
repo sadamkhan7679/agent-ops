@@ -1,5 +1,5 @@
 ---
-name: shadcn/ui Dialog Builder
+name: shadcn-dialog-builder
 description: Comprehensive patterns for building confirmation, form, wizard, and responsive dialogs with shadcn/ui and TypeScript
 version: 1.0.0
 type: skill
@@ -1117,13 +1117,13 @@ function ProjectsPage() {
 
 ## Summary
 
-| Pattern | Component | Best For |
-|---------|-----------|----------|
-| Confirmation | `ConfirmDialog` | Delete, logout, destructive actions |
-| Form | `FormDialog` | Create/edit with validation |
-| Wizard | `WizardDialog` | Multi-step onboarding, complex forms |
-| Async Action | `AsyncActionDialog` | Import, export, long-running operations |
-| Data Fetching | `DataDialog` | Detail views, previews |
-| Nested | Stacked dialogs | Unsaved changes confirmation |
-| Responsive | `ResponsiveDialog` | Mobile-friendly dialogs/drawers |
-| State Management | `useDialog` hook | Centralized dialog state |
+| Pattern          | Component           | Best For                                |
+| ---------------- | ------------------- | --------------------------------------- |
+| Confirmation     | `ConfirmDialog`     | Delete, logout, destructive actions     |
+| Form             | `FormDialog`        | Create/edit with validation             |
+| Wizard           | `WizardDialog`      | Multi-step onboarding, complex forms    |
+| Async Action     | `AsyncActionDialog` | Import, export, long-running operations |
+| Data Fetching    | `DataDialog`        | Detail views, previews                  |
+| Nested           | Stacked dialogs     | Unsaved changes confirmation            |
+| Responsive       | `ResponsiveDialog`  | Mobile-friendly dialogs/drawers         |
+| State Management | `useDialog` hook    | Centralized dialog state                |

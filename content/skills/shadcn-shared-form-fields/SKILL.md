@@ -1,5 +1,5 @@
 ---
-name: shadcn/ui Shared Form Fields
+name: shadcn-shared-form-fields
 description: Reusable, type-safe form field components wrapping shadcn/ui primitives with react-hook-form useFormContext
 version: 1.0.0
 type: skill
@@ -996,15 +996,15 @@ export function ProfileForm() {
 
 ## Summary
 
-| Component | shadcn/ui Primitive | Key Feature |
-|-----------|-------------------|-------------|
-| `FormInput` | Input | Auto number parsing, all input types |
-| `FormTextarea` | Textarea | Character count, max length |
-| `FormSelect` | Select | Option array, placeholder |
-| `FormCheckbox` | Checkbox | Inline label + description layout |
-| `FormRadioGroup` | RadioGroup | Horizontal/vertical, option descriptions |
-| `FormSwitch` | Switch | Card-style layout with description |
-| `FormCombobox` | Command + Popover | Searchable, autocomplete |
-| `FormDatePicker` | Calendar + Popover | Date range constraints |
+| Component        | shadcn/ui Primitive | Key Feature                              |
+| ---------------- | ------------------- | ---------------------------------------- |
+| `FormInput`      | Input               | Auto number parsing, all input types     |
+| `FormTextarea`   | Textarea            | Character count, max length              |
+| `FormSelect`     | Select              | Option array, placeholder                |
+| `FormCheckbox`   | Checkbox            | Inline label + description layout        |
+| `FormRadioGroup` | RadioGroup          | Horizontal/vertical, option descriptions |
+| `FormSwitch`     | Switch              | Card-style layout with description       |
+| `FormCombobox`   | Command + Popover   | Searchable, autocomplete                 |
+| `FormDatePicker` | Calendar + Popover  | Date range constraints                   |
 
 All components use `useFormContext` so they work inside any `FormProvider` without explicit `control` passing.
