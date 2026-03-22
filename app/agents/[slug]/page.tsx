@@ -49,8 +49,11 @@ export default async function AgentDetailPage({
       <div className="flex flex-col gap-6">
         {/* Header */}
         <div className="flex flex-col gap-3">
-          <div className="flex items-start gap-3">
+          <div className="flex flex-wrap items-start gap-3">
             <h1 className="text-3xl font-bold tracking-tight">{agent.name}</h1>
+            <Badge variant="secondary" className="mt-1.5 shrink-0">
+              {agent.teamLabel}
+            </Badge>
             <Badge variant="outline" className="mt-1.5 shrink-0">
               {agent.role}
             </Badge>
@@ -61,9 +64,10 @@ export default async function AgentDetailPage({
         <Separator />
 
         {/* Metadata */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
           <MetaItem label="Version" value={agent.version} />
           <MetaItem label="Author" value={agent.author} />
+          <MetaItem label="Team" value={agent.teamLabel} />
           <MetaItem label="Role" value={agent.role} />
           <MetaItem
             label="Capabilities"

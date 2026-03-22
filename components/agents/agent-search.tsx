@@ -6,22 +6,23 @@ import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { AgentGrid } from "./agent-grid"
 import { cn } from "@/lib/utils"
+import { formatTeamLabel } from "@/lib/agent-groups"
 import { Search } from "lucide-react"
 
 interface AgentSearchProps {
   agents: Agent[]
-  allRoles: string[]
+  allTeams: string[]
 }
 
-export function AgentSearch({ agents, allRoles }: AgentSearchProps) {
+export function AgentSearch({ agents, allTeams }: AgentSearchProps) {
   const [query, setQuery] = useState("")
-  const [selectedRole, setSelectedRole] = useState<string | null>(null)
+  const [selectedTeam, setSelectedTeam] = useState<string | null>(null)
 
   const filtered = useMemo(() => {
     let result = agents
 
-    if (selectedRole) {
-      result = result.filter((a) => a.role === selectedRole)
+    if (selectedTeam) {
+      result = result.filter((a) => a.team === selectedTeam)
     }
 
     if (query.trim()) {
@@ -30,13 +31,15 @@ export function AgentSearch({ agents, allRoles }: AgentSearchProps) {
         (a) =>
           a.name.toLowerCase().includes(q) ||
           a.description.toLowerCase().includes(q) ||
+          a.teamLabel.toLowerCase().includes(q) ||
           a.role.toLowerCase().includes(q) ||
+          a.shortSlug.toLowerCase().includes(q) ||
           a.capabilities.some((c) => c.toLowerCase().includes(q))
       )
     }
 
     return result
-  }, [agents, query, selectedRole])
+  }, [agents, query, selectedTeam])
 
   return (
     <div className="flex flex-col gap-6">
@@ -52,32 +55,32 @@ export function AgentSearch({ agents, allRoles }: AgentSearchProps) {
 
       <div className="flex flex-wrap gap-2">
         <button
-          onClick={() => setSelectedRole(null)}
+          onClick={() => setSelectedTeam(null)}
           className="cursor-pointer"
         >
           <Badge
-            variant={selectedRole === null ? "default" : "outline"}
+            variant={selectedTeam === null ? "default" : "outline"}
             className={cn(
               "cursor-pointer transition-colors",
-              selectedRole === null && "ring-1 ring-primary/30"
+              selectedTeam === null && "ring-1 ring-primary/30"
             )}
           >
-            All Roles
+            All Teams
           </Badge>
         </button>
-        {allRoles.map((role) => (
+        {allTeams.map((team) => (
           <button
-            key={role}
+            key={team}
             onClick={() =>
-              setSelectedRole(selectedRole === role ? null : role)
+              setSelectedTeam(selectedTeam === team ? null : team)
             }
             className="cursor-pointer"
           >
             <Badge
-              variant={selectedRole === role ? "default" : "outline"}
+              variant={selectedTeam === team ? "default" : "outline"}
               className="cursor-pointer transition-colors"
             >
-              {role}
+              {formatTeamLabel(team)}
             </Badge>
           </button>
         ))}

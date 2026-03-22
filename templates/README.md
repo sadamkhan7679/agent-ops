@@ -33,13 +33,17 @@ Open `http://localhost:3000` and browse:
 
 {{STATS}}
 
+## Agent Teams
+
+{{TEAM_STATS}}
+
 ## Featured Skills
 
 {{SKILLS_TABLE}}
 
-## Featured Agents
+## Agents By Team
 
-{{AGENTS_TABLE}}
+{{AGENTS_BY_TEAM}}
 
 ## Project Structure
 
@@ -76,7 +80,7 @@ content/skills/<slug>/SKILL.md
 Agents live in:
 
 ```text
-content/agents/<slug>/AGENT.md
+content/agents/<team>-<slug>/AGENT.md
 ```
 
 ## Contributing

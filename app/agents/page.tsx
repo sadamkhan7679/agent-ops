@@ -1,6 +1,6 @@
 import { Bot } from "lucide-react"
 
-import { getAllAgents, getAllRoles } from "@/lib/agents"
+import { getAllAgents, getAllTeams } from "@/lib/agents"
 import { AgentSearch } from "@/components/agents/agent-search"
 import { APP_DATA } from "@/data/app.data"
 
@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function AgentsPage() {
   const agents = getAllAgents()
-  const allRoles = getAllRoles()
+  const allTeams = getAllTeams()
 
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
@@ -27,7 +27,7 @@ export default function AgentsPage() {
         </p>
       </div>
 
-      <AgentSearch agents={agents} allRoles={allRoles} />
+      <AgentSearch agents={agents} allTeams={allTeams} />
     </div>
   )
 }

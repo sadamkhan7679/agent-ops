@@ -11,13 +11,19 @@ import { Badge } from "@/components/ui/badge"
 
 interface AgentCardProps {
   agent: Agent
+  showTeamBadge?: boolean
 }
 
-export function AgentCard({ agent }: AgentCardProps) {
+export function AgentCard({ agent, showTeamBadge = true }: AgentCardProps) {
   return (
     <Link href={`/agents/${agent.slug}`} className="group block">
       <Card className="h-full transition-shadow duration-200 group-hover:ring-2 group-hover:ring-primary/20 group-hover:shadow-md">
         <CardHeader>
+          {showTeamBadge ? (
+            <div className="flex items-center gap-2">
+              <Badge variant="secondary">{agent.teamLabel}</Badge>
+            </div>
+          ) : null}
           <div className="flex items-start justify-between gap-2">
             <CardTitle>{agent.name}</CardTitle>
             <Badge variant="outline" className="shrink-0">

@@ -47,26 +47,26 @@ agent-skills/
 |
 |-- content/                          # Publishable skill and agent source files
 |   |-- agents/
-|   |   |-- ai-ml-engineer/AGENT.md
-|   |   |-- api-architect/AGENT.md
-|   |   |-- backend-developer/AGENT.md
-|   |   |-- cloud-architect/AGENT.md
-|   |   |-- code-reviewer/AGENT.md
-|   |   |-- database-architect/AGENT.md
-|   |   |-- data-engineer/AGENT.md
-|   |   |-- design-system-lead/AGENT.md
-|   |   |-- devops-engineer/AGENT.md
-|   |   |-- frontend-developer/AGENT.md
-|   |   |-- full-stack-developer/AGENT.md
-|   |   |-- mobile-developer/AGENT.md
-|   |   |-- performance-engineer/AGENT.md
-|   |   |-- qa-engineer/AGENT.md
-|   |   |-- security-engineer/AGENT.md
-|   |   |-- seo-specialist/AGENT.md
-|   |   |-- system-architect/AGENT.md
-|   |   |-- technical-pm/AGENT.md
-|   |   |-- technical-writer/AGENT.md
-|   |   `-- ui-ux-designer/AGENT.md
+|   |   |-- engineering-ai-ml-engineer/AGENT.md
+|   |   |-- engineering-api-architect/AGENT.md
+|   |   |-- engineering-backend-developer/AGENT.md
+|   |   |-- engineering-cloud-architect/AGENT.md
+|   |   |-- quality-code-reviewer/AGENT.md
+|   |   |-- engineering-database-architect/AGENT.md
+|   |   |-- engineering-data-engineer/AGENT.md
+|   |   |-- design-design-system-lead/AGENT.md
+|   |   |-- engineering-devops-engineer/AGENT.md
+|   |   |-- engineering-frontend-developer/AGENT.md
+|   |   |-- engineering-full-stack-developer/AGENT.md
+|   |   |-- engineering-mobile-developer/AGENT.md
+|   |   |-- engineering-performance-engineer/AGENT.md
+|   |   |-- quality-qa-engineer/AGENT.md
+|   |   |-- engineering-security-engineer/AGENT.md
+|   |   |-- marketing-seo-specialist/AGENT.md
+|   |   |-- engineering-system-architect/AGENT.md
+|   |   |-- product-technical-pm/AGENT.md
+|   |   |-- content-technical-writer/AGENT.md
+|   |   `-- design-ui-ux-designer/AGENT.md
 |   `-- skills/
 |       |-- react-best-practices/SKILL.md
 |       |-- react-component-patterns/SKILL.md
@@ -158,33 +158,33 @@ Agents are persona-driven prompt configurations that give Claude a specialized r
 
 | # | Agent | Slug | Expertise |
 | --- | --- | --- | --- |
-| 1 | **AI/ML Engineer** | `ai-ml-engineer` | LLM apps, RAG, inference workflows, model evaluation |
-| 2 | **API Architect** | `api-architect` | API contracts, versioning, DX, REST and GraphQL design |
-| 3 | **Backend Developer** | `backend-developer` | Node.js services, auth, APIs, persistence, server-side architecture |
-| 4 | **Cloud Architect** | `cloud-architect` | Cloud infrastructure, deployment topology, scalability, resilience |
-| 5 | **Code Reviewer** | `code-reviewer` | PR analysis, regressions, maintainability, test coverage |
-| 6 | **Database Architect** | `database-architect` | Schema design, migrations, indexing, and query optimization |
-| 7 | **Data Engineer** | `data-engineer` | Pipelines, ETL, warehousing, data modeling |
-| 8 | **Design System Lead** | `design-system-lead` | Design systems, component APIs, tokens, and consistency |
-| 9 | **DevOps Engineer** | `devops-engineer` | CI/CD, infrastructure automation, observability, release workflows |
-| 10 | **Frontend Developer** | `frontend-developer` | React, Next.js, Tailwind CSS v4, shadcn/ui, accessibility |
-| 11 | **Full-Stack Developer** | `full-stack-developer` | End-to-end feature delivery across UI, API, and deployment |
-| 12 | **Mobile Developer** | `mobile-developer` | React Native, Expo, mobile UX, and native integrations |
-| 13 | **Performance Engineer** | `performance-engineer` | Profiling, Core Web Vitals, rendering and backend performance |
-| 14 | **QA Engineer** | `qa-engineer` | Test strategy, automation, regression prevention, reliability |
-| 15 | **Security Engineer** | `security-engineer` | AppSec, auth, OWASP risks, secure architecture |
-| 16 | **SEO Specialist** | `seo-specialist` | Technical SEO, metadata, structured data, search visibility |
-| 17 | **System Architect** | `system-architect` | Distributed systems, service boundaries, reliability, scalability |
-| 18 | **Technical PM** | `technical-pm` | Scope definition, delivery planning, product-technical alignment |
-| 19 | **Technical Writer** | `technical-writer` | Documentation, guides, API docs, developer education |
-| 20 | **UI/UX Designer** | `ui-ux-designer` | UX flows, interaction design, visual hierarchy, product UI |
+| 1 | **AI/ML Engineer** | `engineering-ai-ml-engineer` | LLM apps, RAG, inference workflows, model evaluation |
+| 2 | **API Architect** | `engineering-api-architect` | API contracts, versioning, DX, REST and GraphQL design |
+| 3 | **Backend Developer** | `engineering-backend-developer` | Node.js services, auth, APIs, persistence, server-side architecture |
+| 4 | **Cloud Architect** | `engineering-cloud-architect` | Cloud infrastructure, deployment topology, scalability, resilience |
+| 5 | **Code Reviewer** | `quality-code-reviewer` | PR analysis, regressions, maintainability, test coverage |
+| 6 | **Database Architect** | `engineering-database-architect` | Schema design, migrations, indexing, and query optimization |
+| 7 | **Data Engineer** | `engineering-data-engineer` | Pipelines, ETL, warehousing, data modeling |
+| 8 | **Design System Lead** | `design-design-system-lead` | Design systems, component APIs, tokens, and consistency |
+| 9 | **DevOps Engineer** | `engineering-devops-engineer` | CI/CD, infrastructure automation, observability, release workflows |
+| 10 | **Frontend Developer** | `engineering-frontend-developer` | React, Next.js, Tailwind CSS v4, shadcn/ui, accessibility |
+| 11 | **Full-Stack Developer** | `engineering-full-stack-developer` | End-to-end feature delivery across UI, API, and deployment |
+| 12 | **Mobile Developer** | `engineering-mobile-developer` | React Native, Expo, mobile UX, and native integrations |
+| 13 | **Performance Engineer** | `engineering-performance-engineer` | Profiling, Core Web Vitals, rendering and backend performance |
+| 14 | **QA Engineer** | `quality-qa-engineer` | Test strategy, automation, regression prevention, reliability |
+| 15 | **Security Engineer** | `engineering-security-engineer` | AppSec, auth, OWASP risks, secure architecture |
+| 16 | **SEO Specialist** | `marketing-seo-specialist` | Technical SEO, metadata, structured data, search visibility |
+| 17 | **System Architect** | `engineering-system-architect` | Distributed systems, service boundaries, reliability, scalability |
+| 18 | **Technical PM** | `product-technical-pm` | Scope definition, delivery planning, product-technical alignment |
+| 19 | **Technical Writer** | `content-technical-writer` | Documentation, guides, API docs, developer education |
+| 20 | **UI/UX Designer** | `design-ui-ux-designer` | UX flows, interaction design, visual hierarchy, product UI |
 
 ### Agent File Format
 
 Each agent is stored as:
 
 ```text
-content/agents/<slug>/AGENT.md
+content/agents/<team>-<slug>/AGENT.md
 ```
 
 Each `AGENT.md` file follows this structure:
@@ -235,7 +235,7 @@ The Next.js application is the presentation layer for the content in `content/`.
 
 - **Landing Page**: Overview of the project plus featured skills and agents.
 - **Skills Catalog**: Search and tag filtering for all local skills.
-- **Agents Catalog**: Search and role filtering for all local agents.
+- **Agents Catalog**: Search and team filtering for all local agents.
 - **Dynamic Detail Pages**: Static params generated for every skill and agent slug.
 - **MDX Rendering**: Markdown content is rendered with custom components and syntax highlighting.
 - **Associated Skills UI**: Agent detail pages distinguish between local repo skills and external registry skills.
