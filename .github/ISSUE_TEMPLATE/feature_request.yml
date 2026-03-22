@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest a new feature, workflow, skill, or agent improvement
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What user need or maintainer problem does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the change you want to see.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. List other approaches you considered.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Content
+        - Next.js app
+        - Documentation
+        - Tooling
+        - CI / automation
+        - Other
+    validations:
+      required: true
