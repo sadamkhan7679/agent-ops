@@ -1,5 +1,5 @@
 ---
-name: React Project Structure
+name: React, Next.js, TypeScript Project Structure
 description: Opinionated React + Next.js + TypeScript project structure and component-splitting guidance. Use this whenever the user asks how to organize a frontend codebase, where files should live, how to split large pages or components, how to structure components, hooks, services, store, constants, lib, types, data, schema, or actions, or when a Next.js app feels messy and needs a consistent architecture.
 version: 1.0.0
 type: skill
