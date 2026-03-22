@@ -1,18 +1,17 @@
-name: CI
+name: CD
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - opened
-      - synchronize
-      - reopened
-      - ready_for_review
   workflow_dispatch:
 
+concurrency:
+  group: cd-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  validate:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,11 +37,5 @@ jobs:
           pnpm generate:readme
           git diff --exit-code README.md
 
-      - name: Typecheck
-        run: pnpm typecheck
-
-      - name: Lint
-        run: pnpm lint
-
-      - name: Build
+      - name: Build production app
         run: pnpm build
