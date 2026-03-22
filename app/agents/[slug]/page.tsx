@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
@@ -5,6 +6,7 @@ import { ArrowLeft } from "lucide-react"
 import { getAllAgents, getAgentBySlug } from "@/lib/agents"
 import { getSkillBySlug } from "@/lib/skills"
 import { renderAgentContent } from "@/lib/markdown"
+import { JsonLd } from "@/components/seo/json-ld"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -15,9 +17,35 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card"
+import { APP_DATA } from "@/data/app.data"
+import { absoluteUrl, createMetadata } from "@/lib/seo"
 
 export function generateStaticParams() {
   return getAllAgents().map((agent) => ({ slug: agent.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const agent = getAgentBySlug(slug)
+
+  if (!agent) {
+    return createMetadata({
+      title: "Agent Not Found",
+      description: APP_DATA.appDescription,
+      path: `/agents/${slug}`,
+    })
+  }
+
+  return createMetadata({
+    title: agent.name,
+    description: agent.description,
+    path: `/agents/${agent.slug}`,
+    keywords: [...agent.tags, agent.role, agent.teamLabel, "AI agent"],
+  })
 }
 
 export default async function AgentDetailPage({
@@ -36,6 +64,20 @@ export default async function AgentDetailPage({
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: agent.name,
+          description: agent.description,
+          url: absoluteUrl(`/agents/${agent.slug}`),
+          keywords: agent.tags,
+          author: {
+            "@type": "Organization",
+            name: agent.author,
+          },
+        }}
+      />
       <Button
         render={<Link href="/agents" />}
         variant="ghost"

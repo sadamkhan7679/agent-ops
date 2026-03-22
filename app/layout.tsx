@@ -1,3 +1,4 @@
+import type { Metadata, Viewport } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
 import "./globals.css"
@@ -6,6 +7,7 @@ import { Header } from "@/components/layout/header"
 import { Footer } from "@/components/layout/footer"
 import { cn } from "@/lib/utils"
 import { APP_DATA } from "@/data/app.data"
+import { createMetadata } from "@/lib/seo"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -14,9 +16,25 @@ const fontMono = Geist_Mono({
   variable: "--font-mono",
 })
 
-export const metadata = {
-  title: APP_DATA.appName,
-  description: APP_DATA.appDescription,
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0c111d" },
+  ],
+}
+
+export const metadata: Metadata = {
+  ...createMetadata(),
+  title: {
+    default: APP_DATA.appName,
+    template: `%s | ${APP_DATA.appName}`,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

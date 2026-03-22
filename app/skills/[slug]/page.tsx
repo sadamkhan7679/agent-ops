@@ -1,7 +1,9 @@
+import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 
+import { JsonLd } from "@/components/seo/json-ld"
 import { getAllSkills, getSkillBySlug } from "@/lib/skills"
 import { renderSkillContent } from "@/lib/markdown"
 import { CopyButton } from "@/components/shared/copy-button"
@@ -10,9 +12,34 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { APP_DATA } from "@/data/app.data"
+import { absoluteUrl, createMetadata } from "@/lib/seo"
 
 export function generateStaticParams() {
   return getAllSkills().map((skill) => ({ slug: skill.slug }))
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
+  const skill = getSkillBySlug(slug)
+
+  if (!skill) {
+    return createMetadata({
+      title: "Skill Not Found",
+      description: APP_DATA.appDescription,
+      path: `/skills/${slug}`,
+    })
+  }
+
+  return createMetadata({
+    title: skill.name,
+    description: skill.description,
+    path: `/skills/${skill.slug}`,
+    keywords: [...skill.tags, skill.category, "AI skill"],
+  })
 }
 
 export default async function SkillDetailPage({
@@ -32,6 +59,20 @@ export default async function SkillDetailPage({
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-10 sm:px-6">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "TechArticle",
+          headline: skill.name,
+          description: skill.description,
+          url: absoluteUrl(`/skills/${skill.slug}`),
+          keywords: skill.tags,
+          author: {
+            "@type": "Organization",
+            name: skill.author,
+          },
+        }}
+      />
       <Button
         render={<Link href="/skills" />}
         variant="ghost"
