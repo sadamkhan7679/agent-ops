@@ -13,7 +13,11 @@
       "Bash(wc -l /c/Users/sadam/.claude/skills/vercel-react-best-practices/rules/*.md)",
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-best-practices/guides\")",
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-component-patterns/guides\")",
-      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-project-structure/guides\")"
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-project-structure/guides\")",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-project-structure/guides\")",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-drizzle-patterns/guides\")",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-api-patterns/guides\")",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-auth-rbac/guides\")"
     ]
   }
 }
