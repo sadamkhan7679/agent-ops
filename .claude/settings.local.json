@@ -9,7 +9,11 @@
       "Bash(done)",
       "Bash(for agent in frontend-developer backend-developer database-architect full-stack-developer)",
       "Bash(do mkdir -p \"content/agents/$agent\")",
-      "Bash(mv \"content/agents/$agent.md\" \"content/agents/$agent/AGENT.md\")"
+      "Bash(mv \"content/agents/$agent.md\" \"content/agents/$agent/AGENT.md\")",
+      "Bash(wc -l /c/Users/sadam/.claude/skills/vercel-react-best-practices/rules/*.md)",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-best-practices/guides\")",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-component-patterns/guides\")",
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-project-structure/guides\")"
     ]
   }
 }
