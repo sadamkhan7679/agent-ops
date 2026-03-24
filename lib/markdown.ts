@@ -58,6 +58,36 @@ export async function renderSkillContent(slug: string) {
 }
 
 /**
+ * Read and compile any file within a skill directory into a React element.
+ * `relativePath` is without .md extension (e.g., "guides/performance-list-optimization").
+ * Pass empty string for SKILL.md.
+ */
+export async function renderSkillFile(slug: string, relativePath: string) {
+  const fileName = relativePath ? `${relativePath}.md` : "SKILL.md"
+  const filePath = path.join(process.cwd(), "content", "skills", slug, fileName)
+  if (!fs.existsSync(filePath)) return null
+
+  const raw = fs.readFileSync(filePath, "utf-8")
+  return renderMdx(raw)
+}
+
+/**
+ * Get frontmatter from any file within a skill directory.
+ */
+export function getSkillFileFrontmatter(
+  slug: string,
+  relativePath: string
+): Record<string, unknown> | null {
+  const fileName = relativePath ? `${relativePath}.md` : "SKILL.md"
+  const filePath = path.join(process.cwd(), "content", "skills", slug, fileName)
+  if (!fs.existsSync(filePath)) return null
+
+  const raw = fs.readFileSync(filePath, "utf-8")
+  const { data } = matter(raw)
+  return data
+}
+
+/**
  * Read and compile an agent's AGENT.md into a React element.
  */
 export async function renderAgentContent(slug: string) {

@@ -159,7 +159,7 @@ export const mdxComponents = {
       return (
         <code
           className={cn(
-            "grid min-w-full border-0 bg-transparent p-0 text-[13px] break-words",
+            "grid min-w-full border-0 bg-transparent p-0 text-[13px] text-white/90 break-words",
             className
           )}
           {...props}

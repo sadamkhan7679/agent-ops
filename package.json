@@ -15,7 +15,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "generate:readme": "tsx scripts/generate-readme.ts",
-    "prebuild": "pnpm generate:readme",
+    "compile:agents": "tsx scripts/compile-agents.ts",
+    "prebuild": "pnpm generate:readme && pnpm compile:agents",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

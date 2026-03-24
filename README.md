@@ -31,10 +31,10 @@ Open `http://localhost:3000` and browse:
 
 ## Stats
 
-- **7 skills** available locally
+- **14 skills** available locally
 - **20 agents** available locally
 - **6 teams** represented
-- **23 unique skill tags**
+- **46 unique skill tags**
 - **20 unique agent roles**
 
 ## Agent Teams
@@ -50,6 +50,13 @@ Open `http://localhost:3000` and browse:
 
 | Skill | Slug | Category | Description |
 | --- | --- | --- | --- |
+| expo-best-practices | `expo-best-practices` | Mobile | Production-grade Expo and React Native best practices covering performance, navigation, state management, native APIs, platform-specific code, OTA updates, testing, and accessibility |
+| expo-component-patterns | `expo-component-patterns` | Mobile | Advanced React Native component patterns with TypeScript including compound components, headless components, HOCs, polymorphic pressables, animated patterns, and platform-adaptive components |
+| expo-project-structure | `expo-project-structure` | Mobile | Opinionated Expo + React Native + TypeScript project structure and screen-splitting guidance. Use this whenever the user asks how to organize a mobile codebase, where files should live, how to split large screens or components, how to structure components, hooks, services, store, constants, types, or navigation, or when an Expo app feels messy and needs a consistent architecture. |
+| nestjs-api-patterns | `nestjs-api-patterns` | Backend | REST and GraphQL API design patterns for NestJS covering DTOs, versioning, pagination, filtering, sorting, caching, rate limiting, file uploads, and OpenAPI documentation. Use when building NestJS APIs, designing endpoints, implementing query patterns, or optimizing API performance. |
+| nestjs-auth-rbac | `nestjs-auth-rbac` | Backend | Authentication and authorization deep-dive for NestJS covering JWT, sessions, refresh tokens, RBAC, permissions, guards, decorators, OAuth2, multi-tenancy, and security hardening. Use when implementing auth flows, role-based access control, permission systems, or securing NestJS APIs. |
+| nestjs-drizzle-patterns | `nestjs-drizzle-patterns` | Backend | Deep Drizzle ORM patterns for NestJS applications covering schema design, migrations, relations, transactions, query builder, repositories, and testing. Use when integrating Drizzle with NestJS, designing database schemas, writing complex queries, or managing migrations. |
+| nestjs-project-structure | `nestjs-project-structure` | Backend | Opinionated NestJS + TypeScript project structure covering module organization, layer-first architecture, monorepo patterns, and domain-driven folder conventions. Use when organizing a NestJS codebase, deciding where files should live, splitting large modules, or structuring services, controllers, repositories, DTOs, and guards. |
 | nextjs-seo-optimization | `nextjs-seo-optimization` | Next.js | Comprehensive SEO optimization for Next.js App Router projects. Use this whenever the user asks about Next.js SEO, metadata, generateMetadata, canonical URLs, sitemap.xml, robots.txt, JSON-LD, Open Graph, Twitter cards, indexing, crawlability, structured data, AI visibility, AEO, GEO, or why a Next.js page is not ranking or not appearing in AI-generated answers. |
 | react-best-practices | `react-best-practices` | React | Production-grade React best practices covering performance, hooks, state management, error handling, Suspense, accessibility, and Server Components |
 | react-component-patterns | `react-component-patterns` | React | Advanced React component patterns with TypeScript including compound components, render props, HOCs, polymorphic components, and more |

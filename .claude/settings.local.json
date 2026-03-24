@@ -19,7 +19,12 @@
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-api-patterns/guides\")",
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-auth-rbac/guides\")",
       "Bash(ls -la /d/3.Portfolio-Projects/skills-repo/agent-skills/app/skills/[slug]/)",
-      "Bash(wc -l /d/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-best-practices/guides/*.md)"
+      "Bash(wc -l /d/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-best-practices/guides/*.md)",
+      "Bash(pnpm dlx shadcn@latest add sheet --yes)",
+      "Bash(for f in content/skills/*/AGENTS.md)",
+      "Bash(do echo \"=== $f ===\")",
+      "Read(//d/3.Portfolio-Projects/skills-repo/agent-skills/**)",
+      "Bash(pnpm compile:agents)"
     ]
   }
 }
