@@ -17,7 +17,9 @@
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-project-structure/guides\")",
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-drizzle-patterns/guides\")",
       "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-api-patterns/guides\")",
-      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-auth-rbac/guides\")"
+      "Bash(mkdir -p \"d:/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/nestjs-auth-rbac/guides\")",
+      "Bash(ls -la /d/3.Portfolio-Projects/skills-repo/agent-skills/app/skills/[slug]/)",
+      "Bash(wc -l /d/3.Portfolio-Projects/skills-repo/agent-skills/content/skills/expo-best-practices/guides/*.md)"
     ]
   }
 }
