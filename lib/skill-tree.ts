@@ -118,8 +118,8 @@ export function getSkillFileTree(slug: string): SkillFileTree {
   const hasGuides = entries.some(
     (e) => e.isDirectory() && e.name === "guides"
   )
-  // Exclude SKILL.md (rendered as default), AGENTS.md (auto-generated), README.md (internal docs)
-  const EXCLUDED_ROOT_FILES = new Set(["SKILL.md", "AGENTS.md", "README.md"])
+  // Exclude SKILL.md (rendered as default), README.md (internal docs)
+  const EXCLUDED_ROOT_FILES = new Set(["SKILL.md", "README.md"])
   const rootFiles = entries
     .filter((e) => e.isFile() && e.name.endsWith(".md") && !EXCLUDED_ROOT_FILES.has(e.name))
     .map((e) => e.name)
@@ -138,11 +138,14 @@ export function getSkillFileTree(slug: string): SkillFileTree {
     type: "file",
   })
 
-  // Root-level markdown files (README.md, AGENTS.md, etc.)
+  // Root-level markdown files (AGENTS.md, etc.)
+  const ROOT_FILE_LABELS: Record<string, string> = {
+    "AGENTS.md": "Full Compiled Guide",
+  }
   for (const file of rootFiles) {
     const pathWithoutExt = file.replace(/\.md$/, "")
     nodes.push({
-      name: getFileTitle(path.join(skillDir, file), file),
+      name: ROOT_FILE_LABELS[file] ?? getFileTitle(path.join(skillDir, file), file),
       path: pathWithoutExt,
       type: "file",
     })
@@ -265,8 +268,8 @@ export function getSkillFilePaths(slug: string): string[][] {
   const paths: string[][] = []
   const entries = fs.readdirSync(skillDir, { withFileTypes: true })
 
-  // Root-level .md files (exclude SKILL.md, AGENTS.md, README.md)
-  const EXCLUDED_ROOT_FILES = new Set(["SKILL.md", "AGENTS.md", "README.md"])
+  // Root-level .md files (exclude SKILL.md, README.md)
+  const EXCLUDED_ROOT_FILES = new Set(["SKILL.md", "README.md"])
   for (const entry of entries) {
     if (entry.isFile() && entry.name.endsWith(".md") && !EXCLUDED_ROOT_FILES.has(entry.name)) {
       paths.push([entry.name.replace(/\.md$/, "")])

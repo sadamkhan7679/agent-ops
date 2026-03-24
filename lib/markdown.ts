@@ -1,3 +1,4 @@
+import type { ComponentPropsWithoutRef } from "react"
 import fs from "fs"
 import path from "path"
 import { compileMDX } from "next-mdx-remote/rsc"
@@ -12,14 +13,42 @@ type PrettyCodeOptions = {
 }
 
 /**
- * Compile a raw markdown string into a React element using MDX.
+ * Check if a URL is relative (not absolute, not http, not anchor-only).
  */
-export async function renderMdx(source: string) {
+function isRelativeUrl(href: string): boolean {
+  return (
+    !href.startsWith("http") &&
+    !href.startsWith("//") &&
+    !href.startsWith("#") &&
+    !href.startsWith("/")
+  )
+}
+
+/**
+ * Compile a raw markdown string into a React element using MDX.
+ * When `basePath` is provided, relative links are resolved against it.
+ */
+export async function renderMdx(source: string, basePath?: string) {
   const { content } = matter(source)
+
+  // Merge custom link resolver when basePath is provided
+  const components = basePath
+    ? {
+        ...mdxComponents,
+        a: ({
+          href,
+          ...props
+        }: ComponentPropsWithoutRef<"a">) => {
+          const resolved =
+            href && isRelativeUrl(href) ? `${basePath}/${href}` : href
+          return mdxComponents.a({ href: resolved, ...props })
+        },
+      }
+    : mdxComponents
 
   const { content: mdxContent } = await compileMDX({
     source: content,
-    components: mdxComponents,
+    components,
     options: {
       parseFrontmatter: false,
       mdxOptions: {
@@ -54,7 +83,7 @@ export async function renderSkillContent(slug: string) {
   if (!fs.existsSync(filePath)) return null
 
   const raw = fs.readFileSync(filePath, "utf-8")
-  return renderMdx(raw)
+  return renderMdx(raw, `/skills/${slug}`)
 }
 
 /**
@@ -68,7 +97,7 @@ export async function renderSkillFile(slug: string, relativePath: string) {
   if (!fs.existsSync(filePath)) return null
 
   const raw = fs.readFileSync(filePath, "utf-8")
-  return renderMdx(raw)
+  return renderMdx(raw, `/skills/${slug}`)
 }
 
 /**

@@ -127,4 +127,4 @@ plugins/                # Expo config plugins
 
 ## Full Compiled Document
 
-For the complete guide with all content expanded: `AGENTS.md`
+For the complete guide with all content expanded: [AGENTS.md](AGENTS)

@@ -91,4 +91,4 @@ guides/animated-shared-element.md
 
 ## Full Compiled Document
 
-For the complete guide with all patterns expanded: `AGENTS.md`
+For the complete guide with all patterns expanded: [AGENTS.md](AGENTS)

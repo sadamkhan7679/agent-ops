@@ -24,7 +24,13 @@
       "Bash(for f in content/skills/*/AGENTS.md)",
       "Bash(do echo \"=== $f ===\")",
       "Read(//d/3.Portfolio-Projects/skills-repo/agent-skills/**)",
-      "Bash(pnpm compile:agents)"
+      "Bash(pnpm compile:agents)",
+      "Bash(node -e \":*)",
+      "Bash(grep -rl \"AGENTS.md\" content/skills/*/SKILL.md)",
+      "Bash(for f in content/skills/*/SKILL.md)",
+      "Bash(do sed -i 's|For the complete guide with all content expanded: `AGENTS.md`|For the complete guide with all content expanded: [View Full Compiled Guide]\\(AGENTS\\)|' \"$f\")",
+      "Bash(sed -i 's|For the complete guide with all patterns expanded: `AGENTS.md`|For the complete guide with all patterns expanded: [View Full Compiled Guide]\\(AGENTS\\)|' \"$f\")",
+      "Bash(grep -rn \"View Full Compiled Guide\" content/skills/*/SKILL.md)"
     ]
   }
 }

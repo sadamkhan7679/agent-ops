@@ -88,4 +88,4 @@ Reference these patterns when:
 
 ## Full Compiled Document
 
-For the complete guide with all content expanded: `AGENTS.md`
+For the complete guide with all content expanded: [AGENTS.md](AGENTS)
